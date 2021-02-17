@@ -1,4 +1,4 @@
-# platform-game
+# calculator-react
 
 First milestone for calculator react Microverse Project, By Oscar Russi
 
