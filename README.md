@@ -7,10 +7,10 @@ First milestone for calculator react Microverse Project, By Oscar Russi
 # What it does
 
 - Initial config for calculator project
-- remove unnecessary files after npx create-react-app 
-- add linters
-- add prop-types and big.js packages
-- deployment in Heroku
+- Remove unnecessary files after npx create-react-app 
+- Add linters
+- Add prop-types and big.js packages
+- Deployment in Heroku
 
 # Build with
 
