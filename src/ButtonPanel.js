@@ -13,7 +13,7 @@ function ButtonPanel() {
     <div>
       {
           groups.map(group => (
-            <div key={Math.random() * 10}>
+            <div className="calculator-group" key={Math.random() * 10}>
               {
                   group.map(btn => (
                     <Button name={btn} key={Math.random * 10} />
