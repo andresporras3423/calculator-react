@@ -1,6 +1,6 @@
 function Display() {
   return (
-    <input type="text" id="display" />
+    <input className="display" type="text" id="display" disabled />
   );
 }
 
