@@ -3,7 +3,7 @@ import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 
 function App() {
-  const result = 0;
+  const result = '0';
   return (
     <>
       <div className="App">
