@@ -1,16 +1,19 @@
 # calculator-react
 
-First milestone for calculator react Microverse Project, By Oscar Russi
+Second milestone for calculator react Microverse Project, By Oscar Russi
 
 ![screenshot](calculator-screenshot.png)
 
 # What it does
 
-- Initial config for calculator project
-- Remove unnecessary files after npx create-react-app 
-- Add linters
-- Add prop-types and big.js packages
-- Deployment in Heroku
+- Add components to the project
+- Move component to components folder
+- Inside App component added Display and ButtonPanel components
+- The Display has an input text to show the result of the operations
+- The ButtonPanels contain all the Button components, one per each button
+- Using nanoid package to create unique ids for the different elements od the DOM
+- to install nanoid use: "npm install nanoid"
+- Using React fragment in the App component
 
 # Build with
 
@@ -18,6 +21,7 @@ First milestone for calculator react Microverse Project, By Oscar Russi
 - Webpack
 - npm
 - Heroku (for deployment)
+- nanoid
 
 # Live demo
 
