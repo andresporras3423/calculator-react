@@ -7,11 +7,11 @@ Second milestone for calculator react Microverse Project, By Oscar Russi
 # What it does
 
 - Add components to the project
-- Move component to components folder
+- Move component to the components folder
 - Inside App component added Display and ButtonPanel components
 - The Display has an input text to show the result of the operations
-- The ButtonPanels contain all the Button components, one per each button
-- Using nanoid package to create unique ids for the different elements od the DOM
+- The ButtonPanels contain all the Button components, one per button
+- Using nanoid package to create unique ids for the different elements of the DOM
 - to install nanoid use: "npm install nanoid"
 - Using React fragment in the App component
 
