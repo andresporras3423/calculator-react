@@ -1,0 +1,64 @@
+export function calculate(obj, buttonName) {
+  if (buttonName == '=') {
+    if (obj.operation = '+') {
+      obj.total += obj.next;
+      obj.opetation = null;
+      obj.next = null;
+    }
+    if (obj.operation == '-') {
+      obj.total -= obj.next;
+      obj.opetation = null;
+      obj.total = null;
+    }
+    if (obj.operation == '/') {
+      obj.total /= obj.next;
+      obj.opetation = null;
+      obj.next = null;
+    }
+    if (obj.operation == '*') {
+      obj.total *= obj.next;
+      obj.opetation = null;
+      obj.next = null;
+    }
+  } else if (buttonName == 'AC') {
+    obj.total = null;
+    obj.opetation = null;
+    obj.next = null;
+  } else if (buttonName == '+/-') {
+    obj.total *= -1;
+    obj.opetation = null;
+    obj.next = null;
+  } else if (buttonName == '%') {
+    obj.total /= 100;
+    obj.opetation = null;
+    obj.next = null;
+  } else if (buttonName == '.') {
+    if (obj.operation == null && obj.total.match(/\./) == null) {
+      obj.total += '.0';
+    } else if (obj.next.match(/\./) == null) {
+      if (obj.next == null) obj.next += '0.0';
+      obj.next += '.0';
+    }
+  } else if (buttonName.match(/[1-9]/)) {
+    if (obj.operation == null) {
+      if (obj.total == '0') obj.total == buttonName;
+      else obj.total += buttonName;
+    } else {
+      obj.total += buttonName;
+    }
+  } else if (buttonName == '0') {
+    if (obj.operation == null && obj.total != '0') {
+      if (obj.total == '0' || obj.total.match(/\.[0]+$/)) {
+        obj.total = obj.total.slice(0, obj.total.length - 1) + buttonName;
+      } else obj.total += buttonName;
+    } else if (obj.next != null) {
+      if (obj.next == '0' || obj.next.match(/\.[0]+$/)) {
+        obj.next = obj.next.slice(0, obj.next.length - 1) + buttonName;
+      } else obj.next += buttonName;
+    }
+  } else if (buttonName.match(/[-x\+\/]/) && obj.operation == null) {
+    obj.operation = buttonName;
+    obj.next = 0;
+  }
+  return obj;
+}
