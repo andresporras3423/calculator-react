@@ -1,6 +1,6 @@
 # calculator-react
 
-Fourth milestone for calculator react Microverse Project, By Oscar Russi
+Fourth milestone for calculator React Microverse Project, By Oscar Russi
 
 ![screenshot](calculator-screenshot.png)
 
