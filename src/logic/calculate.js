@@ -1,10 +1,10 @@
+import { operate } from './operate';
+
 export function calculate(obj1, buttonName) {
   const obj = obj1;
-  if (buttonName === '=') {
-    if (obj.operation === '+') obj.total += obj.next;
-    if (obj.operation === '-') obj.total -= obj.next;
-    if (obj.operation === '÷') obj.total /= obj.next;
-    if (obj.operation === 'x') obj.total *= obj.next;
+  if (obj.total === 'Error') obj.total = '0';
+  if (buttonName === '=' && obj.next !== '') {
+    obj.total = operate(obj.total, obj.next, obj.operation);
     obj.operation = '';
     obj.next = '';
   } else if (buttonName === 'AC') {
@@ -14,9 +14,6 @@ export function calculate(obj1, buttonName) {
   } else if (buttonName === '+/-') {
     if (obj.operation === '') obj.total *= -1;
     else obj.next *= -1;
-  } else if (buttonName === '%') {
-    if (obj.operation === '') obj.total /= 100;
-    else obj.next /= 100;
   } else if (buttonName === '.') {
     if (obj.operation === '') {
       if (obj.total.match(/\./) === null) obj.total = `${obj.total}.0`;
@@ -40,7 +37,7 @@ export function calculate(obj1, buttonName) {
         obj.next = obj.next.slice(0, obj.next.length - 1) + buttonName;
       } else obj.next += buttonName;
     }
-  } else if (buttonName.match(/[-x+÷]/) && obj.operation === '') {
+  } else if (buttonName.match(/[-x+÷%]/) && obj.operation === '') {
     obj.operation = buttonName;
   }
   return obj;
