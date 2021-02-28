@@ -8,12 +8,7 @@ function App() {
   const [total, setTotal] = useState('0');
   const [operation, setOperation] = useState('');
   const [next, setNext] = useState('');
-  // const handleChange = () => setResult('1');
-  // const updateDisplay = nValue => {
-  //   setResult(nValue);
-  // };
   const updateDisplay = bValue => {
-    console.log(bValue);
     const nValues = calculate({ total, operation, next }, bValue);
     setTotal(nValues.total);
     setOperation(nValues.operation);
