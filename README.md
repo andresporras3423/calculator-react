@@ -1,19 +1,15 @@
 # calculator-react
 
-Second milestone for calculator react Microverse Project, By Oscar Russi
+Fourth milestone for calculator react Microverse Project, By Oscar Russi
 
 ![screenshot](calculator-screenshot.png)
 
 # What it does
 
-- Add components to the project
-- Move component to the components folder
-- Inside App component added Display and ButtonPanel components
-- The Display has an input text to show the result of the operations
-- The ButtonPanels contain all the Button components, one per button
-- Using nanoid package to create unique ids for the different elements of the DOM
-- to install nanoid use: "npm install nanoid"
-- Using React fragment in the App component
+- Using props to pass information from parents to children
+- Using callbacks to pass information from children to parent
+- Using Big.js for arithmetic operations
+- Using prop-types to validate types and pass default values between components
 
 # Build with
 
@@ -21,7 +17,6 @@ Second milestone for calculator react Microverse Project, By Oscar Russi
 - Webpack
 - npm
 - Heroku (for deployment)
-- nanoid
 
 # Live demo
 
