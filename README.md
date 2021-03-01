@@ -13,10 +13,10 @@ Fourth milestone for calculator React Microverse Project, By Oscar Russi
 
 # Build with
 
-- React
-- Webpack
-- npm
-- Heroku (for deployment)
+- [React](https://reactjs.org/)
+- [Webpack](https://webpack.js.org/)
+- [npm](https://www.npmjs.com/)
+- [Heroku](https://www.heroku.com/)
 
 # Live demo
 
