@@ -10,7 +10,6 @@ export function operate(total, next, operation) {
     if (next.match(/^0[.]{0,1}[0]*$/)) return 'Error';
     return one.div(two).toString();
   }
-  if (operation === '%') return one.mod(two);
   return null;
 }
 

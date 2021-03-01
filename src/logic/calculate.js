@@ -1,42 +1,45 @@
 import { operate } from './operate';
 
-export function calculate(nCalcData, buttonName) {
-  const calcData = nCalcData;
-  if (calcData.total === 'Error') calcData.total = '0';
-  if (buttonName === '=' && calcData.next !== '') {
-    calcData.total = operate(calcData.total, calcData.next, calcData.operation);
-    calcData.operation = '';
-    calcData.next = '';
+export function calculate(calcData, buttonName) {
+  let { total, operation, next } = calcData;
+  if (total === 'Error') total = '0';
+  if (buttonName === '=' && next !== '') {
+    total = operate(total, next, operation);
+    operation = '';
+    next = '';
   } else if (buttonName === 'AC') {
-    calcData.total = '0';
-    calcData.operation = '';
-    calcData.next = '';
+    total = '0';
+    operation = '';
+    next = '';
   } else if (buttonName === '+/-') {
-    if (calcData.operation === '') calcData.total = `${calcData.total * -1}`;
-    else if (calcData.next !== '') calcData.next = `${calcData.next * -1}`;
+    if (operation === '') total = `${total * -1}`;
+    else if (next !== '') next = `${next * -1}`;
+  } else if (buttonName === '%') {
+    if (operation === '') total = operate(total, '100', '÷');
+    else if (next !== '') next = operate(next, '100', '÷');
   } else if (buttonName === '.') {
-    if (calcData.operation === '') {
-      if (calcData.total.match(/\./) === null) calcData.total = `${calcData.total}.0`;
-    } else if (calcData.next === '') calcData.next = '0.0';
-    else if (calcData.next.match(/\./) === null) calcData.next = `${calcData.next}.0`;
+    if (operation === '') {
+      if (total.match(/\./) === null) total = `${total}.0`;
+    } else if (next === '') next = '0.0';
+    else if (next.match(/\./) === null) next = `${next}.0`;
   } else if (buttonName.match(/[1-9]/) !== null) {
-    if (calcData.operation === '') {
-      if (calcData.total === '0' || calcData.total.match(/\.[0]+$/)) {
-        calcData.total = calcData.total.slice(0, calcData.total.length - 1) + buttonName;
-      } else calcData.total += buttonName;
-    } else if (calcData.next === '' || calcData.next.match(/\.[0]+$/)) {
-      calcData.next = calcData.next.slice(0, calcData.next.length - 1) + buttonName;
-    } else calcData.next += buttonName;
+    if (operation === '') {
+      if (total === '0' || total.match(/\.[0]+$/)) {
+        total = total.slice(0, total.length - 1) + buttonName;
+      } else total += buttonName;
+    } else if (next === '' || next.match(/\.[0]+$/)) {
+      next = next.slice(0, next.length - 1) + buttonName;
+    } else next += buttonName;
   } else if (buttonName === '0') {
-    if (calcData.operation === '' && calcData.total !== '0') {
-      calcData.total += buttonName;
-    } else if (calcData.next !== '0') {
-      calcData.next += buttonName;
+    if (operation === '' && total !== '0') {
+      total += buttonName;
+    } else if (next !== '0') {
+      next += buttonName;
     }
-  } else if (buttonName.match(/[-x+÷%]/) && calcData.operation === '') {
-    calcData.operation = buttonName;
+  } else if (buttonName.match(/[-x+÷]/) && operation === '') {
+    operation = buttonName;
   }
-  return calcData;
+  return { total, operation, next };
 }
 
 export default calculate;
