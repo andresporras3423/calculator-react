@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 function Button(props) {
-  const { name, updateDisplay } = props;
+  const { name, clickHandler } = props;
 
   const callUpdateDisplay = e => {
-    updateDisplay(e.target.textContent);
+    clickHandler(e.target.textContent);
   };
   return (
     <button className="button" type="submit" onClick={callUpdateDisplay}>{name}</button>
@@ -13,12 +13,12 @@ function Button(props) {
 
 Button.propTypes = {
   name: PropTypes.string,
-  updateDisplay: PropTypes.func,
+  clickHandler: PropTypes.func,
 };
 
 Button.defaultProps = {
   name: null,
-  updateDisplay: null,
+  clickHandler: null,
 };
 
 export default Button;
