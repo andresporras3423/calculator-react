@@ -1,7 +1,6 @@
 import { operate } from './operate';
 
 export function calculate(calcData, buttonName) {
-  console.log(calcData);
   let { total, next, operation } = calcData;
   if (total === null) {
     total = '0';

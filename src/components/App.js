@@ -14,15 +14,13 @@ class App extends React.Component {
     };
   }
 
+  handleClick = buttonValue => {
+    const values = this.state;
+    this.setState(calculate(values, buttonValue));
+  };
+
   render() {
     const { total, next, operation } = this.state;
-
-    this.handleClick = buttonValue => {
-      const nValues = calculate({ total, operation, next }, buttonValue);
-      this.setState({ total: nValues.total });
-      this.setState({ next: nValues.next });
-      this.setState({ operation: nValues.operation });
-    };
     return (
       <>
         <div className="App">

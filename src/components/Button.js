@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 function Button(props) {
   const { name, clickHandler } = props;
 
-  const callUpdateDisplay = e => {
+  const handleClick = e => {
     clickHandler(e.target.textContent);
   };
   return (
-    <button className="button" type="submit" onClick={callUpdateDisplay}>{name}</button>
+    <button className="button" type="submit" onClick={handleClick}>{name}</button>
   );
 }
 
