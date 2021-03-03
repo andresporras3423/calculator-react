@@ -1,15 +1,15 @@
 # calculator-react
 
-Fourth milestone for calculator React Microverse Project, By Oscar Russi
+Fifth milestone for the calculator React Microverse Project, By Oscar Russi
 
 ![screenshot](calculator-screenshot.png)
 
 # What it does
 
-- Using props to pass information from parents to children
-- Using callbacks to pass information from children to parent
-- Using Big.js for arithmetic operations
-- Using prop-types to validate types and pass default values between components
+- Using class component for the App component
+- Using setState to dynamically update the attributes
+- Using this.state for the variables in App.js
+- Passing function to update values of the parent component
 
 # Build with
 
